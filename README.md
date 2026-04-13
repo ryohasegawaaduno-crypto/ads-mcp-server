@@ -19,7 +19,7 @@ Meta広告とGoogle広告のデータをClaude Code / Claude Desktopから取得
 ### 2. インストール
 
 ```bash
-git clone https://github.com/<your-username>/ads-mcp-server.git
+git clone https://github.com/ryohasegawaaduno-crypto/ads-mcp-server.git
 cd ads-mcp-server
 npm install
 ```
@@ -27,7 +27,11 @@ npm install
 ### 3. 環境変数の設定
 
 ```bash
+# Mac / Linux
 cp .env.example .env
+
+# Windows（コマンドプロンプト）
+copy .env.example .env
 ```
 
 `.env` を編集して、Google Cloud Consoleで取得した値を設定:
@@ -66,7 +70,9 @@ claude mcp add ads-mcp-server node /path/to/ads-mcp-server/build/index.js
 
 **Claude Desktopの場合:**
 
-`~/Library/Application Support/Claude/claude_desktop_config.json` に追加:
+���定ファイルに追加:
+- Mac: `~/Library/Application Support/Claude/claude_desktop_config.json`
+- Windows: `%APPDATA%\Claude\claude_desktop_config.json`
 
 ```json
 {
@@ -78,6 +84,9 @@ claude mcp add ads-mcp-server node /path/to/ads-mcp-server/build/index.js
   }
 }
 ```
+
+> Windows の場合、パスはスラッシュを使用してください:
+> `"args": ["C:/Users/yourname/ads-mcp-server/build/index.js"]`
 
 ### 7. 再起動して確認
 
