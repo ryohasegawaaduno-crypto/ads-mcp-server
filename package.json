@@ -1,0 +1,36 @@
+{
+  "name": "my-ads-mcp-server",
+  "version": "1.0.0",
+  "description": "Personal MCP server for Meta Ads and Google Ads integration",
+  "type": "module",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "prepare": "npm run build",
+    "oauth": "npm run build && node build/oauth-server.js",
+    "start:oauth": "npm run oauth"
+  },
+  "keywords": [
+    "mcp",
+    "meta-ads",
+    "google-ads",
+    "advertising"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "axios": "^1.7.9",
+    "crypto-js": "^4.2.0",
+    "dotenv": "^16.4.7",
+    "express": "^5.2.1",
+    "google-auth-library": "^10.5.0"
+  },
+  "devDependencies": {
+    "@types/crypto-js": "^4.2.2",
+    "@types/express": "^5.0.6",
+    "@types/node": "^22.10.5",
+    "typescript": "^5.7.3"
+  }
+}
